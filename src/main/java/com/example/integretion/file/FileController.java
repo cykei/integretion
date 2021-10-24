@@ -1,17 +1,13 @@
-package com.example.integretion;
+package com.example.integretion.file;
 
-import com.example.integretion.javaver.FileWriterGateway;
+import com.example.integretion.file.FileWriterGateway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.integration.annotation.IntegrationComponentScan;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@ComponentScan(basePackages={"com.example.integretion.javaver"})
+@ComponentScan(basePackages={"com.example.integretion.file"})
 @RestController
 public class FileController {
 
@@ -31,7 +27,7 @@ public class FileController {
     @GetMapping("/")
     public String file() {
 
-        gateway.writeToFile("hello","my name is CYKEI!");
+        gateway.writeToFile("hello","my name is c2!");
         return "SUCCESS";
     }
 }
